@@ -139,7 +139,7 @@ public class Person {
 		this.ageProperty().set(age);
 	}
 	
-	//asasasa 
+	//ВВАПВАПВКАП 
 		
 	
 }
