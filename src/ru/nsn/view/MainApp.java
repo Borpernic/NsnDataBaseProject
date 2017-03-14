@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.text.*;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -20,7 +21,7 @@ public class MainApp extends Application {
 	private ObservableList<Person> personData = FXCollections.observableArrayList();
 
 	public MainApp() {
-		personData.add(new Person("Hans", "Muster"));
+		personData.add(new Person("bn", "Muster"));
 		personData.add(new Person("Ruth", "Mueller"));
 		personData.add(new Person("Heinz", "Kurz"));
 		personData.add(new Person("Cornelia", "Meier"));
@@ -29,6 +30,7 @@ public class MainApp extends Application {
 		personData.add(new Person("Anna", "Best"));
 		personData.add(new Person("Stefan", "Meier"));
 		personData.add(new Person("Martin", "Mueller"));
+		personData.add(new Person("тт", "борис"));
 
 	}
 
@@ -38,10 +40,9 @@ public class MainApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("NSN приложение");
-
+		
 		initRootLayout();
 
 		showPersonOverview();
@@ -57,6 +58,8 @@ public class MainApp extends Application {
 
 			// Отображаем сцену, содержащую корневой макет.
 			Scene scene = new Scene(rootLayout);
+			//scene.getStylesheets().add("../view/NSN.css");//.styleProperty().setValue(
+			//scene.getRoot().css
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (IOException e) {

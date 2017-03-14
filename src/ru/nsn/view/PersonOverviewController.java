@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ru.nsn.model.Person;
@@ -83,7 +84,9 @@ public class PersonOverviewController {
 	private void showPersonDetails(Person person) {
 		if (person != null) {
 			// Заполняем метки информацией из объекта person.
+			//labelname.setText(person.getFirstName());
 			labelname.setText(person.getFirstName());
+			labelname.fontProperty().set(Font.font("Verdana"));//setFont("Verdana");
 			lebelfam.setText(person.getLastName());
 			labelstrit.setText(person.getStreet());
 			labelbld.setText(Integer.toString(person.getPostalCode()));
@@ -95,7 +98,7 @@ public class PersonOverviewController {
 			// Если Person = null, то убираем весь текст.
 			labelname.setText("");
 			lebelfam.setText("");
-			labelstrit.setText("");
+			labelstrit.setText("eertert");
 			labelbld.setText("");
 			labelcyti.setText("");
 			labelage.setText("");
