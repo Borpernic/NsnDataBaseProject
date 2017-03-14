@@ -21,7 +21,7 @@ public class MainApp extends Application {
 	private ObservableList<Person> personData = FXCollections.observableArrayList();
 
 	public MainApp() {
-		personData.add(new Person("bn", "Muster"));
+		personData.add(new Person("Hans", "Muster"));
 		personData.add(new Person("Ruth", "Mueller"));
 		personData.add(new Person("Heinz", "Kurz"));
 		personData.add(new Person("Cornelia", "Meier"));
@@ -30,7 +30,7 @@ public class MainApp extends Application {
 		personData.add(new Person("Anna", "Best"));
 		personData.add(new Person("Stefan", "Meier"));
 		personData.add(new Person("Martin", "Mueller"));
-		personData.add(new Person("тт", "борис"));
+		personData.add(new Person("Борис", "Першин"));
 
 	}
 
