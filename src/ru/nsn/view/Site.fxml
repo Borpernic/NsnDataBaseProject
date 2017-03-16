@@ -135,7 +135,7 @@
       </TabPane>
       <ButtonBar layoutX="114.0" layoutY="346.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <buttons>
-            <Button mnemonicParsing="false" text="Cancel" />
+            <Button mnemonicParsing="false" text="%key.OkButton" />
           <Button minWidth="0.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="100.0" text="Yes" />
             <Button mnemonicParsing="false" text="Print" />
             <Button mnemonicParsing="false" text="Export" />
