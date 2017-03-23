@@ -1,18 +1,17 @@
 package ru.nsn.view;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.text.*;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ru.nsn.model.Person;
+
+import java.io.IOException;
 
 public class MainApp extends Application {
 	private Stage primaryStage;
@@ -34,6 +33,10 @@ public class MainApp extends Application {
 
 	}
 
+	public static void main(String[] args) {
+		launch(args);
+	}
+
 	public ObservableList<Person> getPersonData() {
 		return personData;
 	}
@@ -42,7 +45,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("NSN приложение");
-		
+
 		initRootLayout();
 
 		showPersonOverview();
@@ -58,7 +61,7 @@ public class MainApp extends Application {
 
 			// Отображаем сцену, содержащую корневой макет.
 			Scene scene = new Scene(rootLayout);
-			//scene.getStylesheets().add("../view/NSN.css");//.styleProperty().setValue(
+			//scene.getStylesheets().add("../view/Nsn.css");//.styleProperty().setValue(
 			//scene.getRoot().css
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -88,11 +91,6 @@ public class MainApp extends Application {
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}
-
-	public static void main(String[] args) {
-		launch(args);
-	}
-	
 	
 	public boolean showPersonEditDialog(Person person) {
 	    try {
