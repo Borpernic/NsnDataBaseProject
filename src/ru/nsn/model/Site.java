@@ -1,11 +1,13 @@
 package ru.nsn.model;
 
+import ru.nsn.interfaces.SiteFactory;
+
 import java.util.Date;
 
 /**
  * Created by bn on 24.03.2017.
  */
-public class Site {
+public class Site implements SiteFactory {
     private long siteId;
     private int siteNumberMf;
     private int siteNumberYota;
@@ -248,5 +250,30 @@ public class Site {
 
     public void setRdComment(String rdComment) {
         this.rdComment = rdComment;
+    }
+
+    @Override
+    public Site getSite(long siteID) {
+        return null;
+    }
+
+    @Override
+    public Site setSite(Site site) {
+        return null;
+    }
+
+    @Override
+    public void updateSite(Site site) {
+
+    }
+
+    @Override
+    public void deleteSaite(long siteId) {
+
+    }
+
+    @Override
+    public Site selectSite(long siteId) {
+        return null;
     }
 }
