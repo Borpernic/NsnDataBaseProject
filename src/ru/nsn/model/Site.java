@@ -36,7 +36,7 @@ public class Site implements SiteFactory {
     private int rdSatatus;
     private String rdComment;
 
-    public long getSiteId() {
+    public int getSiteId() {
         return siteId;
     }
 

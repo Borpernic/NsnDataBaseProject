@@ -23,6 +23,7 @@ public class Sites implements SiteFactory {
 
     @Override
     public Site setSite(Site site) {
+        sites.set(site.getSiteId(), site);
         return null;
     }
 
