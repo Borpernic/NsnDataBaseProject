@@ -5,25 +5,25 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" id="root" prefHeight="400.0" prefWidth="600.0"
             stylesheets="@../css/Nsn.css" xmlns="http://javafx.com/javafx/8.0.111"
             fx:controller="ru.nsn.controller.menuController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close"/>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
 </BorderPane>
