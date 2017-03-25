@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by bn on 24.03.2017.
  */
 public class Site implements SiteFactory {
-    private long siteId;
+    private int siteId;
     private int siteNumberMf;
     private int siteNumberYota;
     private Date surveyDate;
@@ -40,7 +40,7 @@ public class Site implements SiteFactory {
         return siteId;
     }
 
-    public void setSiteId(long siteId) {
+    public void setSiteId(int siteId) {
         this.siteId = siteId;
     }
 
@@ -253,7 +253,7 @@ public class Site implements SiteFactory {
     }
 
     @Override
-    public Site getSite(long siteID) {
+    public Site getSite(int siteID) {
         return null;
     }
 
@@ -268,12 +268,12 @@ public class Site implements SiteFactory {
     }
 
     @Override
-    public void deleteSaite(long siteId) {
+    public void deleteSaite(int siteId) {
 
     }
 
     @Override
-    public Site selectSite(long siteId) {
+    public Site selectSite(int siteId) {
         return null;
     }
 }

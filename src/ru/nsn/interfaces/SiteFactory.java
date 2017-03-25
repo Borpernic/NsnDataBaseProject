@@ -7,10 +7,12 @@ import ru.nsn.model.Site;
  */
 
 public interface SiteFactory {
-    Site getSite(long siteID);
+    Site getSite(int siteID);
     Site setSite(Site site);
     void  updateSite(Site site);
-    void  deleteSaite(long siteId);
-    Site selectSite(long siteId);
+
+    void deleteSaite(int siteId);
+
+    Site selectSite(int siteId);
 
 }
