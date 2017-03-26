@@ -34,6 +34,12 @@ public class Site implements Comparable {
     private int rdSatatus;
     private String rdComment;
 
+    public Site(int siteId, int siteNumberMf) {
+        this.siteId = siteId;
+        this.siteNumberMf = siteNumberMf;
+        //this.siteNumberYota = siteNumberYota;
+    }
+
     public int getSiteId() {
         return siteId;
     }

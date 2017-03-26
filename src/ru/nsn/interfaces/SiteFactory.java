@@ -6,7 +6,7 @@ import ru.nsn.model.Site;
  * Created by Borpernic on 24.03.2017.
  */
 
-public interface SiteFactory {
+public interface SiteFactory extends Iterable {
     Site getSite(int siteID);
 
     Site setSite(Site site);

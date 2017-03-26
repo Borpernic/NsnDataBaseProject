@@ -9,16 +9,20 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ru.nsn.interfaces.SiteFactory;
+import ru.nsn.model.MapSiteFactory;
 import ru.nsn.model.Person;
+import ru.nsn.model.Site;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 public class MainApp extends Application {
     private Stage primaryStage;
 
     private BorderPane rootLayout;
     private ObservableList<Person> personData = FXCollections.observableArrayList();
-
+    private SiteFactory siteFactory = new MapSiteFactory();
     public MainApp() {
         personData.add(new Person("Hans", "Muster"));
         personData.add(new Person("Ruth", "Mueller"));
@@ -45,11 +49,25 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("NSN приложение");
+        testSitesGenerator();
+        for (Iterator it = siteFactory.iterator(); it.hasNext(); ) {
+            Site s = (Site) it.next();
+            System.out.println(s.getSiteId() + " - " + s.getSiteNumberMf());
+
+
+        }
 
         initRootLayout();
 
         showPersonOverview();
 
+    }
+
+    private void testSitesGenerator() {
+        for (int i = 0; i < 100; i++) {
+            // siteFactory=new MapSiteFactory();
+            siteFactory.setSite(new Site(i, i));
+        }
     }
 
     public void initRootLayout() {
