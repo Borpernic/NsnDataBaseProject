@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by bn on 24.03.2017.
  */
-public class Site {
+public class Site implements Comparable {
     private int siteId;
     private int siteNumberMf;
     private int siteNumberYota;
@@ -250,5 +250,13 @@ public class Site {
         this.rdComment = rdComment;
     }
 
-
+    @Override
+    public int compareTo(Object o) {
+        Site so;
+        if (o instanceof Site) {
+            so = (Site) o;
+            if (this.siteId == so.getSiteId()) return 1;
+        }
+        return 0;
+    }
 }

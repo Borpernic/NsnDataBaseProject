@@ -15,6 +15,6 @@ public interface SiteFactory {
 
     void deleteSaite(int siteId);
 
-    Site selectSite(int siteId);
+    //Site selectSite(int siteId);
 
 }

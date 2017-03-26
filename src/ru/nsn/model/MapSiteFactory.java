@@ -1,20 +1,16 @@
 package ru.nsn.model;
 
+import org.apache.commons.collections4.BidiMap;
+import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 import ru.nsn.interfaces.SiteFactory;
-
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Created by Borpernic on 26.03.2017.
  */
-public class Sites implements SiteFactory {
+public class MapSiteFactory implements SiteFactory {
 
-    private ArrayList<Site> sites;
+    private BidiMap<Integer, Site> sites = new DualHashBidiMap<>();
 
-    public Sites(Collection<Site> sites) {
-        this.sites.addAll(sites);
-    }
 
     @Override
     public Site getSite(int siteID) {
@@ -23,22 +19,23 @@ public class Sites implements SiteFactory {
 
     @Override
     public Site setSite(Site site) {
-        sites.set(site.getSiteId(), site);
-        return null;
+        return sites.put(site.getSiteId(), site);
+
     }
 
     @Override
     public void updateSite(Site site) {
+        sites.put(site.getSiteId(), site);
 
     }
 
     @Override
     public void deleteSaite(int siteId) {
-
+        sites.remove(siteId);
     }
 
-    @Override
+   /* @Override
     public Site selectSite(int siteId) {
         return null;
-    }
+    }*/
 }
