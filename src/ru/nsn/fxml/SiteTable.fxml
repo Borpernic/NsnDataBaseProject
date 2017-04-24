@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="siteTable" stylesheets="@../css/Nsn.css"
+            xmlns="http://javafx.com/javafx/8.0.111" fx:controller="ru.nsn.controller.SiteTableController">
+    <children>
+        <HBox alignment="CENTER_LEFT" maxWidth="50.0" minHeight="50.0" minWidth="-Infinity" prefHeight="50.0"
+              stylesheets="@../css/Nsn.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label minWidth="50.0" text="%Form.label.find">
+                    <HBox.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0"/>
+                    </HBox.margin>
+                </Label>
+                <ComboBox fx:id="comboboxFindId" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </ComboBox>
+                <Label minWidth="50.0" text="%Form.label.filter">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Label>
+                <ComboBox fx:id="comboboxFilterId" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </ComboBox>
+            </children>
+        </HBox>
+        <TableView fx:id="siteTableFxId" editable="true" minHeight="200.0" prefHeight="200.0" prefWidth="200.0"
+                   tableMenuButtonVisible="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+            <columns>
+                <TableColumn fx:id="siteTableColumnSiteId" prefWidth="100.0" text="%Table.Site.SiteId"/>
+                <TableColumn fx:id="siteTableColumnSiteNumberMf" prefWidth="100.0" text="%Table.Site.SiteNumberMf"/>
+                <TableColumn fx:id="siteTableColumnSiteNumberYota" prefWidth="100.0" text="%Table.Site.SiteNumberYota"/>
+                <TableColumn fx:id="siteTableColumnSiteAdress" prefWidth="300.0" text="%Table.Site.SiteAdress"/>
+                <TableColumn fx:id="siteTableColumnSurveyDatePlaned" prefWidth="200.0"
+                             text="%Table.Site.SurveyDatePlaned"/>
+                <TableColumn fx:id="siteTableColumnSurveyDate" minWidth="-Infinity" prefWidth="150.0"
+                             text="%Table.Site.SurveyDate"/>
+                <TableColumn fx:id="siteTableColumnPhotoReport" prefWidth="200.0" text="%Table.Site.PhotoReport"/>
+                <TableColumn fx:id="siteTableColumnPhotoReportDate" prefWidth="200.0"
+                             text="%Table.Site.PhotoReportDate"/>
+                <TableColumn fx:id="siteTableColumnPhotoReportStatus" prefWidth="200.0"
+                             text="%Table.Site.PhotoReportStatus"/>
+                <TableColumn fx:id="siteTableColumnTzEpuDate" prefWidth="200.0" text="%Table.Site.TzEpuDate"/>
+                <TableColumn fx:id="siteTableColumnTzEpuStatus" prefWidth="200.0" text="%Table.Site.TzEpuStatus"/>
+                <TableColumn fx:id="siteTableColumnSarfOwner" prefWidth="200.0" text="%Table.Site.SarfOwner"/>
+                <TableColumn fx:id="siteTableColumnSarfDate" prefWidth="200.0" text="%Table.Site.SarfDate"/>
+                <TableColumn fx:id="siteTableColumnSarfStatus" prefWidth="200.0" text="%Table.Site.SarfStatus"/>
+                <TableColumn fx:id="siteTableColumnApDate" prefWidth="200.0" text="%Table.Site.ApDate"/>
+                <TableColumn fx:id="siteTableColumnApStatus" prefWidth="200.0" text="%Table.Site.ApStatus"/>
+                <TableColumn fx:id="siteTableColumnTssrOwner" prefWidth="200.0" text="%Table.Site.TssrOwner"/>
+                <TableColumn fx:id="siteTableColumnTssrDate" prefWidth="200.0" text="%Table.Site.TssrDate"/>
+                <TableColumn fx:id="siteTableColumnTssrStatus" prefWidth="200.0" text="%Table.Site.TssrStatus"/>
+                <TableColumn fx:id="siteTableColumnTssrNpoApprove" prefWidth="200.0" text="%Table.Site.TssrNpoApprove"/>
+                <TableColumn fx:id="siteTableColumnTssrRrsApprove" prefWidth="200.0" text="%Table.Site.TssrRrsApprove"/>
+                <TableColumn fx:id="siteTableColumnTssrWepApprove" prefWidth="200.0" text="%Table.Site.TssrWepApprove"/>
+                <TableColumn fx:id="siteTableColumnTssrPepApprove" prefWidth="200.0" text="%Table.Site.TssrPepApprove"/>
+                <TableColumn fx:id="siteTableColumnTssrSmrApprove" prefWidth="200.0" text="%Table.Site.TssrSmrApprove"/>
+                <TableColumn fx:id="siteTableColumnTssrMfApprove" prefWidth="200.0" text="%Table.Site.TssrMfApprove"/>
+                <TableColumn fx:id="siteTableColumnTssrMfPaperApprove" prefWidth="200.0"
+                             text="%Table.Site.TssrMfPaperApprove"/>
+                <TableColumn fx:id="siteTableColumnTssrLlApprove" prefWidth="200.0" text="%Table.Site.TssrLlApprove"/>
+                <TableColumn fx:id="siteTableColumnRdOwner" prefWidth="200.0" text="%Table.Site.RdOwner"/>
+                <TableColumn fx:id="siteTableColumnRdDate" prefWidth="200.0" text="%Table.Site.RdDate"/>
+                <TableColumn fx:id="siteTableColumnRdStatus" prefWidth="200.0" text="%Table.Site.RdStatus"/>
+                <TableColumn fx:id="siteTableColumnRdApproveMf" prefWidth="200.0" text="%Table.Site.RdApproveMf"/>
+                <TableColumn fx:id="siteTableColumnRdApproveMfPaper" prefWidth="300.0"
+                             text="%Table.Site.RdApproveMfPaper"/>
+                <TableColumn fx:id="siteTableColumnSiteSatus" prefWidth="200.0" text="%Table.Site.SiteSatus"/>
+                <TableColumn fx:id="siteTableColumnComments" prefWidth="300.0" text="%Table.Site.Comments"/>
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_LEFT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Button minWidth="120.0" mnemonicParsing="false" text="%Button.edit">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button minWidth="120.0" mnemonicParsing="false" text="%Button.add">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button minWidth="120.0" mnemonicParsing="false" text="%Button.delete">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button minWidth="120.0" mnemonicParsing="false" text="%Button.report">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button minWidth="120.0" mnemonicParsing="false" text="%Button.report">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+
+    </children>
+</AnchorPane>

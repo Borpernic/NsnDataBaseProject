@@ -9,20 +9,25 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ru.nsn.controller.SiteTableController;
 import ru.nsn.interfaces.SiteFactory;
 import ru.nsn.model.MapSiteFactory;
 import ru.nsn.model.Person;
-import ru.nsn.model.Site;
+import ru.nsn.model.SitesDataBaseModel;
 
 import java.io.IOException;
-import java.util.Iterator;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class MainApp extends Application {
     private Stage primaryStage;
 
     private BorderPane rootLayout;
+    private AnchorPane siteTable;
     private ObservableList<Person> personData = FXCollections.observableArrayList();
+
     private SiteFactory siteFactory = new MapSiteFactory();
+
     public MainApp() {
         personData.add(new Person("Hans", "Muster"));
         personData.add(new Person("Ruth", "Mueller"));
@@ -47,42 +52,72 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        primaryStage.setMinHeight(600);
+        primaryStage.setMinWidth(800);
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("NSN приложение");
-        testSitesGenerator();
-        for (Iterator it = siteFactory.iterator(); it.hasNext(); ) {
-            Site s = (Site) it.next();
-            System.out.println(s.getSiteId() + " - " + s.getSiteNumberMf());
-
-
-        }
 
         initRootLayout();
-
-        showPersonOverview();
+        //showSiteTable();
+        //showPersonOverview();
 
     }
 
     private void testSitesGenerator() {
         for (int i = 0; i < 100; i++) {
             // siteFactory=new MapSiteFactory();
-            siteFactory.setSite(new Site(i, i));
+            //         siteFactory.setSite(new Site(i, i));
         }
     }
 
     public void initRootLayout() {
         try {
             // Загружаем корневой макет из fxml файла.
-            FXMLLoader loader = new FXMLLoader();
+  /*          FXMLLoader loader = new FXMLLoader();
+            ResourceBundle bundle = ResourceBundle.getBundle("ru/nsn/view/MainFormBundle",new Locale("ru","RU"));
+            loader.setResources(bundle);
             loader.setLocation(MainApp.class.getResource("../view/RootLayout.fxml"));
-            rootLayout = (BorderPane) loader.load();
+            rootLayout = (BorderPane) loader.load();*/
+            FXMLLoader loader = new FXMLLoader();
+            ResourceBundle bundle = ResourceBundle.getBundle("ru/nsn/bundle/MainFormBundle", new Locale("ru"));
+            loader.setResources(bundle);
+            loader.setLocation(MainApp.class.getResource("/ru/nsn/fxml/SiteTable.fxml"));
 
+            siteTable = (AnchorPane) loader.load();
             // Отображаем сцену, содержащую корневой макет.
-            Scene scene = new Scene(rootLayout);
+            //Scene scene = new Scene(rootLayout,800,600);
+            Scene scene = new Scene(siteTable, 800, 600);
+            SiteTableController siteTableController = loader.getController();
+            SitesDataBaseModel sitesDataBaseModel = new SitesDataBaseModel();
+            siteTableController.initSiteDataBaseModel(sitesDataBaseModel);
             //scene.getStylesheets().add("../view/Nsn.css");//.styleProperty().setValue(
             //scene.getRoot().css
             primaryStage.setScene(scene);
+
+            //primaryStage.s
             primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showSiteTable() {
+        try {
+            // Загружаем сведения об адресатах.
+
+            FXMLLoader loader = new FXMLLoader();
+            ResourceBundle bundle = ResourceBundle.getBundle("ru/nsn/bundle/MainFormBundle", new Locale("ru"));
+            loader.setResources(bundle);
+            loader.setLocation(MainApp.class.getResource("ru/nsn/fxml/SiteTable.fxml"));
+
+            siteTable = (AnchorPane) loader.load();
+
+            // Помещаем сведения об адресатах в центр корневого макета.
+            rootLayout.setCenter(siteTable);
+            //rootLayout.setBottom(personOverview);
+            SiteTableController controller = loader.getController();
+            controller.setMainApp(this);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -92,7 +127,7 @@ public class MainApp extends Application {
         try {
             // Загружаем сведения об адресатах.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("SiteOverview.fxml"));
+            loader.setLocation(MainApp.class.getResource("ru/nsn/fxml/SiteOverview.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
 
             // Помещаем сведения об адресатах в центр корневого макета.
@@ -115,7 +150,7 @@ public class MainApp extends Application {
             // Загружаем fxml-файл и создаём новую сцену
             // для всплывающего диалогового окна.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("dialogEdit.fxml"));
+            loader.setLocation(MainApp.class.getResource("ru/nsn/fxml/dialogEdit.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Создаём диалоговое окно Stage.

@@ -63,15 +63,20 @@ public class PersonOverviewController {
         if (selectedIndex >= 0) {
             tableid.getItems().remove(selectedIndex);
         } else {
-            // Ничего не выбрано.
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Person Selected");
-            alert.setContentText("Please select a person in the table.");
+            alertMsg();
 
-            alert.showAndWait();
         }
+    }
+
+    private void alertMsg() {
+        // Ничего не выбрано.
+        Alert alert = new Alert(AlertType.WARNING);
+        alert.initOwner(mainApp.getPrimaryStage());
+        alert.setTitle("No Selection");
+        alert.setHeaderText("No Person Selected");
+        alert.setContentText("Please select a person in the table.");
+
+        alert.showAndWait();
     }
 
     private void showPersonDetails(Person person) {
@@ -126,13 +131,7 @@ public class PersonOverviewController {
 
         } else {
             // Ничего не выбрано.
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Person Selected");
-            alert.setContentText("Please select a person in the table.");
-
-            alert.showAndWait();
+            alertMsg();
         }
     }
 

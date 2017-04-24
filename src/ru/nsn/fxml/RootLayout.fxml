@@ -2,9 +2,9 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" id="root" prefHeight="400.0" prefWidth="600.0"
-            stylesheets="@../css/Nsn.css" xmlns="http://javafx.com/javafx/8.0.111"
-            fx:controller="ru.nsn.controller.menuController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" id="root" minHeight="600.0" minWidth="800.0" prefHeight="600.0"
+            prefWidth="800.0" stylesheets="@../../css/Nsn.css"
+            xmlns="http://javafx.com/javafx/8.0.111" fx:controller="ru.nsn.controller.menuController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
